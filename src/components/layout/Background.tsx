@@ -1,9 +1,12 @@
+import Navbar from "../header/Navbar"
+import Search from "../header/Search"
 
 
 const Background = () => {
   return (
-    <div className="background w-full h-full bg-neutral-900">
-      heoolo
+    <div className="background bg-blue-950 w-screen h-svh text-white">
+      <Navbar/>
+      <Search/>
     </div>
   )
 }
