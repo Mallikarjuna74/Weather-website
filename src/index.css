@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* You can add your own global styles here. */
+  /* For example, you might want to set the background and font-family: */
+  /* font-family: 'DM Sans', sans-serif; */
+  /* background-color: #1E1E29; */
+  /* color: #FFFFFF; */
+}
