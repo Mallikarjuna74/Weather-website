@@ -10,25 +10,28 @@ import HourlyForecast from "../weather/HourlyForecast"
 
 const Background = () => {
   return (
-    <div className="background bg-blue-950 w-screen h-full text-white">
+    <div className="bg-blue-950 min-h-screen w-full text-white">
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <Navbar/>
-        <Search/>
-        <div className="mt-8 flex flex-col lg:flex-row lg:grid-cols-3 gap-6 w-full h-full items-start">
-          <div className="lg:col-span-2 grid grid-cols-2 gap-6">
+        <Navbar />
+        <Search />
+
+        {/* Main Layout */}
+        <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          
+          {/* Left side: Weather card + details + daily forecast */}
+          <div className="flex flex-col gap-6 lg:col-span-2">
             <WeatherCard />
             <WeatherDetails />
             <DailyForecast />
           </div>
-          <div>
+
+          {/* Right side: Hourly forecast */}
+          <div className="w-full">
             <HourlyForecast />
           </div>
         </div>
       </div>
-
-      
     </div>
-  )
-}
-
+  );
+};
 export default Background
