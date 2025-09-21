@@ -2,10 +2,11 @@
 
 const WeatherDetails = () => {
   return (
-    <div className="weather-details mt-6 sm:mt-10
-    grid grid-cols-2 gap-4 md:grid-cols-4 items-center sm:gap-6 md:gap-8 lg:gap-12
-    p-6 text-white">
-      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
+    <div className="weather-details
+    grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-4 xl:gap-4
+    justify-between items-center sm:gap-6 md:gap-6 lg:gap-8
+     text-white">
+      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 xl:w-48 xl:h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
         <h3 className="text-lg">
           Feels like
         </h3>
@@ -14,7 +15,7 @@ const WeatherDetails = () => {
         </h2>
       </div>
 
-      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
+      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 xl:w-48 xl:h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
          <h3 className="text-lg">
           Humidity
         </h3>
@@ -23,7 +24,7 @@ const WeatherDetails = () => {
         </h2>
       </div>
 
-      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
+      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 xl:w-48 xl:h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
          <h3 className="text-lg">
           Wind
         </h3>
@@ -32,7 +33,7 @@ const WeatherDetails = () => {
         </h2>
       </div>
       
-      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
+      <div className="flex flex-col justify-between p-6 items-start w-42 h-32 xl:w-48 xl:h-32 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs">
          <h3 className="text-lg">
           Precipitation
         </h3>

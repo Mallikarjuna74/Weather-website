@@ -3,11 +3,11 @@ import SearchIcon from "../../assets/images/icon-search.svg";
 export default function SearchSection() {
   return (
     <div className="search flex flex-col justify-center items-center gap-6 mt-10 px-4">
-      <h1 className="mb-10 text-6xl md:text-5xl font-bold text-white text-center leading-tight">
+      <h1 className="mb-10 text-6xl md:text-5xl xl:text-5xl font-bold text-white text-center leading-tight">
         How's the sky looking today?
       </h1>
 
-      <div className="flex flex-col gap-4 w-full items-center max-w-xl">
+      <div className="flex flex-col lg:flex-row justify-between gap-4 w-auto items-center max-w-xl">
         <div className="relative flex-1">
           <img
             src={SearchIcon}
@@ -17,7 +17,8 @@ export default function SearchSection() {
           <input
             type="text"
             placeholder="Search for a place..."
-            className="w-86 h-12 md:h-14 pl-12 pr-4 font-medium text-lg md:text-lg 
+            className="w-86 h-12 md:h-14 lg:w-100 lg:h-14 xl:w-124 xl:h-14 
+                pl-12 pr-4 font-medium text-lg md:text-lg 
                 rounded-xl bg-white/10 backdrop-blur-md 
                 text-white 
                 placeholder-gray-300 shadow-md 
@@ -25,13 +26,14 @@ export default function SearchSection() {
           />
         </div>
         <button
-          className="w-86 h-12 md:h-14 px-6 bg-blue-500 hover:bg-blue-700 
+          className="w-86 h-12 md:h-14 lg:w-30 lg:h-14 xl:w-50 xl:h-14 
+                     px-6 bg-blue-500 hover:bg-blue-700 
                      text-white font-bold text-sm md:text-base 
                      rounded-xl shadow-md transition"
         >
           Search
         </button>
-      </div>
+      </div>  
     </div>
   );
 }
