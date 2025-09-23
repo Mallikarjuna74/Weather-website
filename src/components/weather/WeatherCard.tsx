@@ -2,9 +2,10 @@
 
 const WeatherCard = () => {
   return (
-    <div className="weather-card relative w-[360px] h-76  md:w-[360px] md:h-72 
-                lg:w-[820px] lg:h-80 xl:w-[835px] xl:h-80
-                backdrop-blur-md rounded-2xl overflow-hidden shadow-xl"
+    <div className="weather-card relative w-[360px] h-76  md:w-[700px] md:h-72 
+      lg:w-[820px] lg:h-80 xl:w-[835px] xl:h-80
+      backdrop-blur-md rounded-2xl overflow-hidden shadow-xl"
+      
     >
       <picture>
         <source
@@ -18,7 +19,7 @@ const WeatherCard = () => {
         />
       </picture>
 
-      <div className="absolute inset-0 flex flex-col xl:flex-row xl:justify-between xl:items-center justify-center items-center p-4 sm:p-6 text-white z-10">
+      <div className="absolute inset-0 flex flex-col xl:flex-row xl:justify-between xl:items-center p-4 text-white z-10">
         
         <div className="text-center xl:text-left">
           <h2 className="text-4xl sm:text-lg md:text-xl xl:text-2xl font-bold mb-4">
@@ -38,6 +39,7 @@ const WeatherCard = () => {
         </div>
 
       </div>
+
     </div>
   );
 };

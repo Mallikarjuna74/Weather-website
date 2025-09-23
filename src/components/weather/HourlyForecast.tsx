@@ -3,12 +3,12 @@ import HourlyForecastItem from "./HourlyForecastItem"
 const HourlyForecast = () => {
   return (
     <>
-      <div className="w-90 h-200 rounded-2xl p-2 bg-white/10 backdrop-blur-md border border-white/20 text-white">
+      <div className="w-90 h-200 mx-auto md:w-auto md:mx-8 xl:w-136 rounded-2xl p-2 bg-white/10 backdrop-blur-md border border-white/20 text-white">
         <div className="flex justify-between items-center p-4 pb-0">
             <h2 className="text-lg sm:text-lg md:text-2xl lg:text-xl font-normal">Hourly Forecast</h2>
-            <button className="flex items-center gap-2 px-3 sm:px-4 py-2 
+            <button className="flex items-center gap-2 px-3 py-2 
             rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-s 
-            font-light sm:text-sm md:text-lg lg:text-lg shadow-md hover:bg-white/20 transition
+            font-normal sm:text-sm md:text-lg lg:text-lg shadow-md hover:bg-white/20 transition
             sm:w-46 md:w-36 md:items-center lg:w-34 lg:h-8 lg:items-center xl:76 xl:items-center 2xl:126"
             >
               Saturday
