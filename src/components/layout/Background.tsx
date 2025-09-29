@@ -15,7 +15,7 @@ const Background = () => {
         <Search />
 
         {/* Main Layout */}
-        <div className="mt-8 grid grid-cols-1 items-start gap-10 lg:grid-cols-3 lg:gap-2">
+        <div className="mt-8 grid grid-cols-1 items-start gap-8 lg:grid-cols-3 lg:gap-0">
           
           {/* Left side: Weather card + details + daily forecast */}
           <div className="flex flex-col gap-6 items-center md:justify-center lg:justify-start lg:col-span-2">
