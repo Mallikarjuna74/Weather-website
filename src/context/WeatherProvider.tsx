@@ -2,14 +2,17 @@ import { useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { fetchWeather, fetchCoordinates } from "../api/weather";
 import { WeatherContext } from "./WeatherContext";
+import type { WeatherData } from '../types/weathertype';
+
+
 
 
 type WeatherProviderProps = {
   children: ReactNode;
 };
 
-export const WeatherProvider = ({children}: WeatherProviderProps)=>{
-    const [weather, setWeather]= useState(null);
+export const WeatherProvider = ({children}: WeatherProviderProps) => {
+    const [weather, setWeather]= useState<WeatherData | null>(null);
     const [location, setLocation] = useState({ city: "Berlin", lat: 52.52, lon: 13.41 });
 
 
@@ -17,7 +20,14 @@ export const WeatherProvider = ({children}: WeatherProviderProps)=>{
     const loadWeather = async () => {
       try {
         const data = await fetchWeather(location.lat, location.lon);
-        setWeather({ ...data, city: location.city });
+        setWeather({ 
+          cityName: location.city,
+          temperature: data.current_weather.temperature,
+          windSpeed: data.current_weather.windspeed,
+          humidity: data.hourly.relativehumidity_2m[0],
+          daily: data.daily,
+          hourly: data.hourly, 
+        });
       } catch (err) {
         console.error(err);
       }

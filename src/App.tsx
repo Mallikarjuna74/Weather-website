@@ -1,11 +1,13 @@
 
-
+import { WeatherProvider } from "./context/WeatherProvider";
 import Background from './components/layout/Background';
 
 
 function App() {
   return (
-    <Background />
+    <WeatherProvider>
+      <Background />
+    </WeatherProvider>
   )
 }
 

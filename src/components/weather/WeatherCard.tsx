@@ -1,6 +1,13 @@
-
+import useWeather from "../../hooks/useWeather";
 
 const WeatherCard = () => {
+
+  const { weather } = useWeather();
+
+  if (!weather) return <div className="text-white">Loading...</div>;
+
+ console.log(weather);
+
   return (
     <div className="weather-card relative w-[360px] h-76  md:w-[700px] md:h-72 
       lg:w-[820px] lg:h-80 xl:w-[835px] xl:h-80
@@ -23,7 +30,7 @@ const WeatherCard = () => {
         
         <div className="text-center xl:text-left">
           <h2 className="text-4xl sm:text-lg md:text-xl xl:text-2xl font-bold mb-4">
-            Berlin, Germany
+            {weather.cityName}
           </h2>
           <h3 className="text-xl text-gray-100 sm:text-sm md:text-base opacity-90">
             Sunday, Sep 14, 2025
