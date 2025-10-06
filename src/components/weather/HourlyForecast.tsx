@@ -79,7 +79,7 @@ const HourlyForecast = () => {
             onClick={() => setOpen(!open)}
           >
             {dayName}
-            <img src="/Weather-website/images/icon-dropdown.svg" alt="dropdown" 
+            <img src="/images/icon-dropdown.svg" alt="dropdown" 
               className={
               `w-3 h-3 font-light ml-2 md:w-5 md:h-5 lg:w-4 lg:h-4 xl:w-4 xl:h-4 
               transform transition-transform ${open ? "rotate-180" : "rotate-0"} `}
