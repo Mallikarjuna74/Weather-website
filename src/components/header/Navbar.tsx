@@ -22,7 +22,7 @@ const Navbar = () => {
         >
           <img src="/Weather-website/images/icon-units.svg" alt="units" className="w-4 h-4 md:w-6 md:h-6 lg:w-6 lg:h-6"/>
           Units
-          <img src="src/assets/images/icon-dropdown.svg" alt="dropdown" 
+          <img src="Weather-website/images/icon-dropdown.svg" alt="dropdown" 
           className={`w-3 h-3 md:w-5 md:h-5 ${open ? "rotate-180" : "rotate-0"}`}/>
         </button>
         {open && (
