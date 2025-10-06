@@ -2,12 +2,12 @@ export const weatherConditions: Record<
   number,
   { icon: string; label: string }
 > = {
-  0: { icon: "src/assets/images/icon-sunny.webp", label: "Clear sky" },
-  1: { icon: "src/assets/images/icon-sunny.webp", label: "Mainly clear" },
-  2: { icon: "src/assets/images/icon-partly-cloudy.webp", label: "Partly cloudy" },
-  3: { icon: "src/assets/images/icon-overcast.webp", label: "Overcast" },
-  45: { icon: "src/assets/images/icon-fog.webp", label: "Fog" },
-  48: { icon: "src/assets/images/icon-fog.webp", label: "Depositing rime fog" },
+  0: { icon: "/images/icon-sunny.webp", label: "Clear sky" },
+  1: { icon: "/images/icon-sunny.webp", label: "Mainly clear" },
+  2: { icon: "/images/icon-partly-cloudy.webp", label: "Partly cloudy" },
+  3: { icon: "/images/icon-overcast.webp", label: "Overcast" },
+  45: { icon: "/images/icon-fog.webp", label: "Fog" },
+  48: { icon: "/images/icon-fog.webp", label: "Depositing rime fog" },
   51: { icon: "src/assets/images/icon-rain.webp", label: "Light drizzle" },
   61: { icon: "src/assets/images/icon-rain.webp", label: "Rain" },
   71: { icon: "src/assets/images/icon-snow.webp", label: "Snow" },
