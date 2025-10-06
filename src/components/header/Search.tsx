@@ -1,4 +1,4 @@
-import SearchIcon from "../../assets/images/icon-search.svg";
+import SearchIcon from "/images/icon-search.svg";
 import { useState } from "react";
 import useWeather from "../../hooks/useWeather";
 
