@@ -1,13 +1,5 @@
 import { useContext } from "react";
 
-
-// const useWeather = () => {
-//   return useContext(WeatherContext);
-// };
-
-// export default useWeather;
-
-
 import { WeatherContext } from "../context/WeatherContext";
 
 const useWeather = () => {

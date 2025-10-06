@@ -16,7 +16,6 @@ const HourlyForecast = () => {
     setVisibleHours(HOURLY_STEP);
   }, [selectedDay]);
 
-  // Infinite Scroll Logic
   useEffect(() => {
     const scrollElement = scrollRef.current;
     if (!scrollElement || !weather?.hourly) return;
@@ -30,21 +29,17 @@ const HourlyForecast = () => {
     if (!hasMoreHours) return;
 
     const handleScroll = () => {
-      // Logic to check if user has scrolled near the bottom (e.g., within 200px)
       const isNearBottom = 
         scrollElement.scrollTop + scrollElement.clientHeight >= 
-        scrollElement.scrollHeight - 200; // Load when within 200px of the bottom
+        scrollElement.scrollHeight - 200; 
 
       if (isNearBottom) {
-        // Load the next HOURLY_STEP items
         setVisibleHours(prev => Math.min(prev + HOURLY_STEP, dayHours.length));
       }
     };
 
-    // Attach the scroll event listener
     scrollElement.addEventListener('scroll', handleScroll);
 
-    // Cleanup function
     return () => {
       scrollElement.removeEventListener('scroll', handleScroll);
     };
