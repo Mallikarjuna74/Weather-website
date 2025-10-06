@@ -1,30 +1,76 @@
-import { useState } from "react"
+import { useState, useEffect, useRef} from "react"
 import HourlyForecastItem from "./HourlyForecastItem"
 import useWeather from "../../hooks/useWeather"
+
+const HOURLY_STEP = 9;
 
 const HourlyForecast = () => {
   const { weather} = useWeather();
   const [selectedDay, setSelectedDay] = useState(0);
   const [open, setOpen] = useState(false);
 
+  const [visibleHours, setVisibleHours] = useState(HOURLY_STEP);
+  const scrollRef = useRef<HTMLDivElement>(null);  
+
+  useEffect(() => {
+    setVisibleHours(HOURLY_STEP);
+  }, [selectedDay]);
+
+  // Infinite Scroll Logic
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+    if (!scrollElement || !weather?.hourly) return;
+
+    const hoursPerDay = 24;
+    const start = selectedDay * hoursPerDay;
+    const end = start + hoursPerDay;
+    const dayHours = weather.hourly.time.slice(start, end);
+    const hasMoreHours = visibleHours < dayHours.length;
+
+    if (!hasMoreHours) return;
+
+    const handleScroll = () => {
+      // Logic to check if user has scrolled near the bottom (e.g., within 200px)
+      const isNearBottom = 
+        scrollElement.scrollTop + scrollElement.clientHeight >= 
+        scrollElement.scrollHeight - 200; // Load when within 200px of the bottom
+
+      if (isNearBottom) {
+        // Load the next HOURLY_STEP items
+        setVisibleHours(prev => Math.min(prev + HOURLY_STEP, dayHours.length));
+      }
+    };
+
+    // Attach the scroll event listener
+    scrollElement.addEventListener('scroll', handleScroll);
+
+    // Cleanup function
+    return () => {
+      scrollElement.removeEventListener('scroll', handleScroll);
+    };
+  }, [weather, selectedDay, visibleHours]);
+
   if (!weather?.hourly) return null;
 
   const hoursPerDay = 24;
-
   const start = selectedDay * hoursPerDay;
   const end = start + hoursPerDay;
   const dayHours = weather.hourly.time
-  .map((t: string, index: number) => ({ t, index }))
-  .slice(start, end);
-
+    .map((t: string, index: number) => ({ t, index }))
+    .slice(start, end);
+  
+  const hoursToDisplay = dayHours.slice(0, visibleHours);
+  
+  
   const dayName = new Date(weather.hourly.time[start]).toLocaleDateString("en-US", {
     weekday: "long",
   });
-
+  
   return (
     <>
       <div className="w-90 h-185 mx-auto md:w-auto md:mx-8 xl:w-136 rounded-2xl p-2
-      bg-white/10 backdrop-blur-md border border-white/20 text-white"
+      bg-white/10 backdrop-blur-md border border-white/20 text-white
+      flex flex-col"
       >
 
         <div className="flex justify-between items-center p-4 pb-0">
@@ -72,9 +118,10 @@ const HourlyForecast = () => {
             </div>
           )}
         </div>
-        <div className=" flex-grow h-170  mt-2 overflow-y-auto overflow-auto custom-scrollbar">
+        <div className=" flex-grow h-170  mt-2 overflow-y-auto overflow-auto custom-scrollbar" 
+          ref={scrollRef}>
           <div className="flex flex-col justify-center items-start gap-4 p-4 text-white">
-          {dayHours.map(({ index }) => (
+          {hoursToDisplay.map(({ index }) => (
           <HourlyForecastItem key={index} hourIndex={index} weather={weather} />
           ))}
         </div>

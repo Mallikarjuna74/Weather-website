@@ -40,7 +40,7 @@ const WeatherDetails = () => {
         <h3 className="text-lg">
           Wind
         </h3>
-        <h2 className="text-3xl">
+        <h2 className="text-2xl">
           {weather?.windSpeed ?? 0} km/h
         </h2>
       </div>

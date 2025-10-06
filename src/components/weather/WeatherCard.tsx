@@ -33,8 +33,8 @@ const WeatherCard = () => {
       lg:flex-row xl:flex-row xl:justify-between xl:items-center 
       p-4 text-white z-10">
         
-        <div className="text-center xl:text-left">
-          <h2 className="text-4xl sm:text-lg md:text-xl xl:text-3xl font-bold mb-4">
+        <div className="text-center md:text-left lg:text-left xl:text-left">
+          <h2 className="text-4xl sm:text-lg md:text-3xl xl:text-3xl font-bold mb-4">
             {weather?.cityName}, {weather?.country}
           </h2>
           <h3 className="text-xl text-gray-100 sm:text-sm md:text-base opacity-90">
@@ -42,10 +42,11 @@ const WeatherCard = () => {
           </h3>
         </div>
 
-        <div className="flex flex-row justify-center items-center mt-4 sm:mt-2 md:mt-3 lg:mt-4 gap-12">
+        <div className="flex flex-row justify-center items-center mt-4 sm:mt-2 md:mt-3 lg:mt-4 gap-2">
           <img src={condition.icon} alt={condition.label} 
-          className="w-34 h-34 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-24 xl:h-24"/>
-          <h1 className="text-7xl sm:text-3xl md:text-5xl xl:text-7xl font-bold">
+            className="w-34 h-34 sm:w-12 sm:h-12 md:w-24 md:h-24 lg:w-24 lg:h-24 xl:w-24 xl:h-24"
+          />
+          <h1 className="text-7xl sm:text-3xl md:text-7xl lg:text-7xl xl:text-7xl font-bold">
             {Math.round(weather?.temperature)}°
           </h1>
         </div>
