@@ -1,6 +1,9 @@
-
+import useWeather from "../../hooks/useWeather";
 
 const WeatherDetails = () => {
+
+  const { weather } = useWeather();
+
   return (
     <div className="weather-details w-auto 
       grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-4 xl:gap-5
@@ -14,7 +17,7 @@ const WeatherDetails = () => {
           Feels like
         </h3>
         <h2 className="text-3xl">
-          30°C
+          {Math.round(weather?.temperature ?? 0)}°C
         </h2>
       </div>
 
@@ -26,7 +29,7 @@ const WeatherDetails = () => {
           Humidity
         </h3>
         <h2 className="text-3xl">
-          46%
+          {weather?.humidity ?? 0}%
         </h2>
       </div>
 
@@ -38,7 +41,7 @@ const WeatherDetails = () => {
           Wind
         </h3>
         <h2 className="text-3xl">
-          14 km/h
+          {weather?.windSpeed ?? 0} km/h
         </h2>
       </div>
       
@@ -50,7 +53,7 @@ const WeatherDetails = () => {
           Precipitation
         </h3>
         <h2 className="text-3xl">
-          0 mm
+          {weather?.precipitation ?? 0} mm
         </h2>
       </div>
     </div>

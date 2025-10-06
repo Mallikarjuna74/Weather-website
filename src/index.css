@@ -9,3 +9,28 @@ body {
   /* background-color: #1E1E29; */
   /* color: #FFFFFF; */
 }
+
+
+
+
+/*  */
+/* For Webkit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Width of the vertical scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Makes the track invisible or just dark */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* Dark, translucent white for the thumb */
+  border-radius: 20px; /* Rounded edges */
+  border: 1px solid transparent; /* Optional: border to adjust spacing */
+}
+
+/* For Firefox (requires a different property) */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "thin" or "auto" */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent; /* thumb color track color */
+}

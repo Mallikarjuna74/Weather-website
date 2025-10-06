@@ -13,6 +13,7 @@ export interface HourlyData {
 
 export interface WeatherData {
   cityName: string;
+  country: string;
   temperature: number;
   windSpeed: number;
   humidity: number;
@@ -20,4 +21,6 @@ export interface WeatherData {
   hourly: HourlyData;
   weatherCode?: number;
   description?: string;
+  date: string;
+  precipitation?: number;
 }
