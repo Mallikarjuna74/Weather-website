@@ -14,8 +14,8 @@ export default function SearchSection() {
   }
 
   return (
-    <div className="search flex flex-col justify-center items-center gap-6 mt-10 px-4">
-      <h1 className="mb-10 text-6xl md:text-5xl xl:text-5xl font-bold text-white text-center leading-tight">
+    <div className="search flex flex-col justify-center items-center gap-6 mt-10 px-4 relative">
+      <h1 className="mb-10 text-6xl md:text-5xl xl:text-5xl font-bold text-white text-center leading-tight z-10">
         How's the sky looking today?
       </h1>
 
