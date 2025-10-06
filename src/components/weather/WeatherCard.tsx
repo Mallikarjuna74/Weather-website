@@ -19,10 +19,10 @@ const WeatherCard = () => {
       <picture>
         <source
           media="(max-width: 640px)"
-          srcSet="/images/bg-today-small.svg"
+          srcSet="/Weather-website/images/bg-today-small.svg"
         />
         <img
-          src="/images/bg-today-large.svg"
+          src="/Weather-website/images/bg-today-large.svg"
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
